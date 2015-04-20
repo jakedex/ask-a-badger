@@ -9,6 +9,26 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+    background-color: #861108;
+}
+
+/* change jumbotron */
+
+
+/* change link color */
+a {
+    color: white;
+}
+
+a:hover, a:focus {
+    color: #861108;
+}
+
+ 
+
+/* text link color / body text */
+.text-muted {
+    color: white;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -19,10 +39,6 @@ body {
   padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -31,6 +47,46 @@ body {
   line-height: 40px;
   padding-bottom: 19px;
 }
+
+/* Change nav button color */
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    background-color: white;
+    color: #861108;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover {
+    background-color: white;
+    color: #861108;
+}
+
+/* Change success button color */
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus,
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+    background-color: #C2B39C;
+    border-color: #C2B39C;
+}
+
+.btn-success{
+    background-color: #DFCDB3;
+    border-color: #DFCDB3;
+}
+
+/* input form */
+#numInput {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* marketing text color */
+.marketing {
+    color: white;
+}
+
 
 /* Custom page footer */
 .footer {
