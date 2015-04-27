@@ -9,24 +9,85 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
-
 /* red header */
+
 .redHalf {
     background-color: #861108;
     color: white;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 
-/* change link color */
+.lead {
+    display: inline-block;
+    margin-top: 20px;
+}
 
-a {
+.lead > a {
+    text-decoration: underline;
     color: white;
 }
 
-a:hover,
-a:focus {
-    color: #861108;
+/* submit form */
+
+.box {
+    margin: 20px auto;
+    width: 400px;
+    height: 100px;
 }
+
+input[type="tel"] {
+    appearance: none;
+    width: 380px;
+    height: 70px;
+    font-size: 3em;
+    background: transparent;
+    border: none;
+    border-bottom: solid 4px #600700;
+    text-align: center;
+    transition: border-color 0.6s ease;
+}
+
+::-webkit-input-placeholder {
+    color: #600700;
+    transition: color 0.3s ease;
+}
+
+:focus::-webkit-input-placeholder {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+input[type="tel"]:focus {
+    outline: none;
+    border: none;
+    color: #e6e8eb;
+    border-bottom: solid 4px #e6e8eb;
+    transition: border-color 1s ease;
+}
+
+input[type="submit"] {
+    appearance: none;
+    width: 380px;
+    height: 50px;
+    font-size: 1.05em;
+    background: transparent;
+    color: #600700;
+    border: none;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.5s ease;
+    outline: none;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    color: #600700 !important;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
 /* badger svg */
 
 #badger {
