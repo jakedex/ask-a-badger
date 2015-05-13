@@ -24,8 +24,10 @@
 
 	// Step 4: make an array of people we know, to send them a message. 
 	// Feel free to change/add your own phone number and name here.
-	$people = array(
-		"+16129404706" => "Jake",
+	$num = $_POST['num'];
+
+    $people = array(
+		$num => "Jake",
 	);
 
 	// Step 5: Loop over all our friends. $number is a phone number above, and 
@@ -42,7 +44,7 @@
 			$number,
 
 			// the sms body
-			"Hey $name, what did you need help with?"
+			"Hey $name, what did you need help with?!"
 		);
 
 		// Display a confirmation message on the screen
