@@ -36,7 +36,34 @@ body {
     height: 100px;
 }
 
+.sending {
+    display: none;
+    margin: 0 auto;
+    width: 380px;
+    height: 70px;
+    font-size: 3em;
+}
+
+#sendingBar {
+    margin-top: -400px;
+    height: 3.5px;
+    width: 380px;
+    background-color: #e6e8eb;
+}
+
+/* bootstrap progress bar */
+.progress {
+    margin-top: -4px;
+    height: 4px;
+    border-radius: 0px;
+}
+
+.progress-bar {
+    background: #517C07;
+}
+
 input[type="tel"] {
+/*    display: none;*/
     appearance: none;
     width: 380px;
     height: 70px;
