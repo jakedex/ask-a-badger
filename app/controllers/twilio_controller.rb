@@ -25,11 +25,11 @@ class TwilioController < ApplicationController
 
     # session["counter"] ||= 0
     # sms_count = session["counter"]
-    if sms_count == 0
-      message = "Hello, thanks for the new message."
-    else
-      message = "Hello, thanks for message number #{sms_count + 1}"
-    end
+    # if sms_count == 0
+    #   message = "Hello, thanks for the new message."
+    # else
+    #   message = "Hello, thanks for message number #{sms_count + 1}"
+    # end
     response = Twilio::TwiML::Response.new do |r|
       r.Message message
     end
