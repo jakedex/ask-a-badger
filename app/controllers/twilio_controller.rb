@@ -15,7 +15,7 @@ class TwilioController < ApplicationController
   end
 
   def reply
-    from = params[:from][1..-1].to_i
+    from = params[:From][1..-1].to_i
     if (Preuser.exists?(phone:from))
       message = "Hey, #{from}"
     else
