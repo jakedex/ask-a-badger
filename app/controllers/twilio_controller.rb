@@ -18,14 +18,14 @@ class TwilioController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       r.Message "Hey Monkey. Thanks for the message!"
     end
-    render_twiml response
+    render text: response.text
   end
 
   def status
     # the status can be found in params['MessageStatus']
     # send back an empty response
 
-    render_twiml Twilio::TwiML::Response.new
+    render text: Twilio::TwiML::Response.new.text
   end
 
 end
