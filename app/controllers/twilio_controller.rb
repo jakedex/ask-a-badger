@@ -15,8 +15,10 @@ class TwilioController < ApplicationController
   end
 
   def reply
-    message = @client.messages.create from: '16084674004', to: '16129404706', body: 'Thanks for the message, Jake', status_callback: request.base_url + '/twilio/status'
-    render plain: message.status
+    response = Twilio::TwiML::Response.new do |r|
+      r.Message "Hey Monkey. Thanks for the message!"
+    end
+    render_twiml response
   end
 
   def status
@@ -25,13 +27,5 @@ class TwilioController < ApplicationController
 
     render_twiml Twilio::TwiML::Response.new
   end
-
-  def messaging
-    response = Twilio::TwiML::Response.new do |r|
-      r.Message "Hey Monkey. Thanks for the message!"
-    end
-    render_twiml response
-  end
-
 
 end
