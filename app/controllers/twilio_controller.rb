@@ -15,10 +15,11 @@ class TwilioController < ApplicationController
   end
 
   def reply
-    if (Preuser.exists?(phone:params[:from]))
-      message = "Hey, #{params[:from]}"
+    from = params[:from][1..-1].to_i
+    if (Preuser.exists?(phone:from))
+      message = "Hey, #{from}"
     else
-      user = Preuser.new(phone:params[:from])
+      user = Preuser.new(phone:from)
       user.save
       message = "Created a new user"
     end
