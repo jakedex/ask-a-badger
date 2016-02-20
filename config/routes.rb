@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   get 'users/new'
 
   root 'static_pages#home'
   get 'signup' => 'users#new'
   get 'static_pages/faq'
+
+  get 'twilio/messaging' => 'twilio#messaging'
+  post 'twilio/message' => 'twilio#message'
+  post 'twilio/status' => 'twilio#status'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
