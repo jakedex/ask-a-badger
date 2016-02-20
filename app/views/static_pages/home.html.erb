@@ -1,3 +1,15 @@
+<% if user_signed_in? %>
+  <li>
+  <div>
+      Signed in as <%= current_user.email %>
+  </div>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>
+  </li>
+<% end %>
 <div class="container-float redHalf">
     <svg height="480px" id="badger" version="1.1" viewbox="0 0 480 480"
     width="480px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
