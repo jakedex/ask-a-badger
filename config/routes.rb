@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'twilio/messaging' => 'twilio#messaging'
   post 'twilio/message' => 'twilio#message'
   post 'twilio/status' => 'twilio#status'
+  post 'twilio/reply' => 'twilio#reply'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
