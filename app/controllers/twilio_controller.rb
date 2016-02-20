@@ -2,7 +2,7 @@ class TwilioController < ApplicationController
   #include Webhookable
   #after_filter :set_header
   skip_before_action :verify_authenticity_token
-  enable :sessions
+  # enable :sessions
 
   # @number_to_send_to = params[:number_to_send_to]
   @twilio_phone_number = "16084674004"
