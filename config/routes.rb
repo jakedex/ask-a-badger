@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'preusers/new'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   get 'users/new'
 

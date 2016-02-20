@@ -15,8 +15,16 @@ class TwilioController < ApplicationController
   end
 
   def reply
-    session["counter"] ||= 0
-    sms_count = session["counter"]
+    if (Preuser.exists?(phone:params[:from]))
+      message = "Hey, #{params[:from]}"
+    else
+      user = Preuser.new(phone:params[:from])
+      user.save
+      message = "Created a new user"
+    end
+
+    # session["counter"] ||= 0
+    # sms_count = session["counter"]
     if sms_count == 0
       message = "Hello, thanks for the new message."
     else
