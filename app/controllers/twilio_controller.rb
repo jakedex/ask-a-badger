@@ -17,6 +17,7 @@ class TwilioController < ApplicationController
   def reply
     from = params[:From][1..-1]
     body = params[:Body]
+    message = ""
 
     if (@preuser = Preuser.find_by(phone:from)) == nil
       # create new user
