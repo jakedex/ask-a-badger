@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220230630) do
+ActiveRecord::Schema.define(version: 20160220234717) do
 
   create_table "preusers", force: :cascade do |t|
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "status"
   end
 
   add_index "preusers", ["phone"], name: "index_preusers_on_phone", unique: true

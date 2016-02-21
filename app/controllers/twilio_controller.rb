@@ -10,30 +10,45 @@ class TwilioController < ApplicationController
   def message
     # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
     @client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
-    message = @client.messages.create from: '16084674004', to: '16129404706', body: 'Learning to send SMS you are.', media_url: 'http://linode.rabasa.com/yoda.gif', status_callback: request.base_url + '/twilio/status'
+    message = @client.messages.create from: '16084674004', to: '16129404706', body: 'Learning to send SMS you are.', media_url: 'https://media.giphy.com/media/ypqHf6pQ5kQEg/giphy.gif', status_callback: request.base_url + '/twilio/status'
     render plain: message.status
   end
 
   def reply
     from = params[:From][1..-1]
-    if (Preuser.exists?(phone:from))
-      message = "Hey, #{from}"
-    else
-      user = Preuser.new(phone:from)
-      user.save
-      message = "Created a new user"
+    if (@preuser = Preuser.exists?(phone:from)) #user exists
+      body = params[:Body] #remove later
+      message = parse_question(body)
+    else    # create new user
+      @preuser = Preuser.new(phone:from)
+      @preuser.status = 0
+      message = "Welcome to Ask A Badger. "
+
+      body = params[:Body]
+      if (correct_format(body))   # included message format
+        message += "The brightest minds in Madison are plugging away at your question as you read this, your answer is on its way"
+        parse_question(body)
+        @preuser.status = 1
+      else        # anything else
+        message += "Simply reply in the following format to get started.\n\nFormat: college class_number question\n(E.g. CS 368 How pointers work in c++?) #{@preuser.phone}"
+      end
+
+      @preuser.save
     end
 
-    # session["counter"] ||= 0
-    # sms_count = session["counter"]
-    # if sms_count == 0
-    #   message = "Hello, thanks for the new message."
-    # else
-    #   message = "Hello, thanks for message number #{sms_count + 1}"
-    # end
-    response = Twilio::TwiML::Response.new do |r|
-      r.Message message
+    if (@preuser.status == 0)       # new user? send gif :-)
+      response = Twilio::TwiML::Response.new do |r|
+        r.Message do |msg|
+          msg.Body message
+          msg.Media 'https://media.giphy.com/media/ypqHf6pQ5kQEg/giphy.gif'
+        end
+      end
+    else
+      response = Twilio::TwiML::Response.new do |r|
+        r.Message message
+      end
     end
+
     render text: response.text
   end
 
@@ -42,6 +57,23 @@ class TwilioController < ApplicationController
     # send back an empty response
 
     render text: Twilio::TwiML::Response.new.text
+  end
+
+  def parse_question(input)
+    college_code = input[0..1]
+    course = input[3..5]
+    question = input[7..-1]
+
+    # @preuser.questions
+    return "code #{college_code}, course: #{course} ,question: #{question}"
+  end
+
+  def correct_format(from_message)
+    from_message =~ /[a-zA-Z][a-zA-Z]\s\d{3}\s[a-zA-Z]+.*/ ? true : false
+  end
+
+  def convo
+
   end
 
 end
