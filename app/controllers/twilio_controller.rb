@@ -1,22 +1,23 @@
 class TwilioController < ApplicationController
-  #include Webhookable
-  #after_filter :set_header
   skip_before_action :verify_authenticity_token
-  # enable :sessions
 
-  # @number_to_send_to = params[:number_to_send_to]
-  # def initialize
-  #   @twilio_phone_number = "16084674004"
-  #   @initial_msg = "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
-  # end
+  def initialize
+    @twilio_phone_number = "16084674004"
+    @initial_msg = "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
+    @giphy = 'https://media.giphy.com/media/ypqHf6pQ5kQEg/giphy.gif'
+  end
 
   def send_msg
     # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
     client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
-    num_to = params[:num] ? params[:num] : (params[:From][1..-1]).to_i
+    # num_to = params[:num] ? params[:num] : (params[:From][1..-1]).to_i
 
-    message = client.messages.create from: '16084674004', to: num_to, body: "Welcome to Ask A Badger. " +
-    "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
+    message = client.messages.create(
+      from: @twilio_phone_number,
+      to: params[:num],
+      body: "Welcome to Ask A Badger. " + @initial_msg,
+      media_url: @giphy
+    )
     render plain: message.status
   end
 
@@ -37,7 +38,7 @@ class TwilioController < ApplicationController
       parse_question(body)
       @preuser.status = 2
     elsif (@preuser.status == 0)   # first message
-      msg_content += "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
+      msg_content += @initial_msg
       @preuser.status = 1
     else # not first, wrong input
       msg_content += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
