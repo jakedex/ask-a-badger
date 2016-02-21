@@ -13,8 +13,9 @@ class TwilioController < ApplicationController
   def send data
     # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
     @client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
+    num_to = params[:num]
 
-    message = @client.messages.create from: '16084674004', to: params[:num], body: "Welcome to Ask A Badger. " + @initial_msg
+    message = @client.messages.create from: '16084674004', to: num_to, body: "Welcome to Ask A Badger. " + @initial_msg
     render plain: message.status
   end
 
