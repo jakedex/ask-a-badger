@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'static_pages/faq'
 
-  # get 'twilio/messaging' => 'twilio#messaging'
   post 'twilio/status' => 'twilio#status'
   post 'twilio/reply' => 'twilio#reply'
   post 'twilio/send_msg' => 'twilio#send_msg'
