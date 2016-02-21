@@ -10,14 +10,14 @@ class TwilioController < ApplicationController
     @initial_msg = "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
   end
 
-  # def send data
-  #   # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-  #   @client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
-  #   num_to = params[:num] ? params[:num] : -1
+  def send data
+    # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+    client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
+    num_to = params[:num] ? params[:num] : -1
 
-  #   message = @client.messages.create from: '16084674004', to: num_to, body: "Welcome to Ask A Badger. " + @initial_msg
-  #   render plain: message.status
-  # end
+    message = client.messages.create from: '16084674004', to: num_to, body: "Welcome to Ask A Badger. " + @initial_msg
+    render plain: message.status
+  end
 
   def reply
     from = params[:From][1..-1]
@@ -85,9 +85,4 @@ class TwilioController < ApplicationController
   def correct_format(from_message)
     from_message =~ /[a-zA-Z][a-zA-Z]\d{3}\s[a-zA-Z]+.*/ ? true : false
   end
-
-  def convo
-
-  end
-
 end
