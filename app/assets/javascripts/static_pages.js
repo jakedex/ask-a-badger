@@ -33,7 +33,7 @@ $(function() {
         console.log("attempting ajax");
         $.ajax({
           type: 'POST',
-          url: 'twilio/send',
+          url: 'twilio/send_msg',
           data: num,
           success: function(data) {
             console.log(data);
