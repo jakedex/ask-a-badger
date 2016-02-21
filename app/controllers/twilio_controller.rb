@@ -21,24 +21,24 @@ class TwilioController < ApplicationController
   def reply
     from = params[:From][1..-1]
     body = params[:Body]
-    message = ""
+    msg_content = ""
 
     if (@preuser = Preuser.find_by(phone:from)) == nil
       # create new user
       @preuser = Preuser.new(phone:from)
       @preuser.status = 0
-      message = "Welcome to Ask A Badger. "
+      msg_content = "Welcome to Ask A Badger. "
     end
 
     if (correct_format(body))   # included message format
-      message += "The brightest minds in Madison are plugging away at your question as you read this, your answer is on its way"
-      message += parse_question(body)
+      msg_content += "The brightest minds in Madison are plugging away at your question as you read this, your answer is on its way"
+      parse_question(body)
       @preuser.status = 2
     elsif (@preuser.status == 0)   # first message
-      message += @initial_msg
+      msg_content += @initial_msg
       @preuser.status = 1
     else # not first, wrong input
-      message += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
+      msg_content += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
     end
 
     @preuser.save
@@ -46,13 +46,13 @@ class TwilioController < ApplicationController
     if (@preuser.status == 0)       # new user? send gif :-)
       response = Twilio::TwiML::Response.new do |r|
         r.Message do |msg|
-          msg.Body message
+          msg.Body msg_content
           msg.Media 'https://media.giphy.com/media/ypqHf6pQ5kQEg/giphy.gif'
         end
       end
     else
       response = Twilio::TwiML::Response.new do |r|
-        r.Message message
+        r.Message msg_content
       end
     end
 
@@ -70,13 +70,13 @@ class TwilioController < ApplicationController
     course_code = input[0..4]
     question = input[6..-1]
 
-    if (course = Course.find_by(title:course_code)) == nil
-      # create new course
-      course = Course.new(title:course_code)
-    end
+    # if (course = Course.find_by(title:course_code)) == nil
+    #   # create new course
+    #   course = Course.new(title:course_code)
+    # end
 
     # add question
-    course.questions.new()
+    # course.questions.new()
 
     # return "course: #{course}, q: #{question}"
   end
