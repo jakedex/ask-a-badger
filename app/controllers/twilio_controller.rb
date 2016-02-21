@@ -16,25 +16,25 @@ class TwilioController < ApplicationController
 
   def reply
     from = params[:From][1..-1]
-    if (@preuser = Preuser.find_by(phone:from)) != nil #user exists
-      body = params[:Body] #remove later
-      message = parse_question(body)
-    else    # create new user
+    body = params[:Body]
+
+    if (@preuser = Preuser.find_by(phone:from)) == nil
+      # create new user
       @preuser = Preuser.new(phone:from)
       @preuser.status = 0
       message = "Welcome to Ask A Badger. "
-
-      body = params[:Body]
-      if (correct_format(body))   # included message format
-        message += "The brightest minds in Madison are plugging away at your question as you read this, your answer is on its way"
-        parse_question(body)
-        @preuser.status = 1
-      else        # anything else
-        message += "Simply reply in the following format to get started.\n\nFormat: college class_number question\n(E.g. CS 368 How pointers work in c++?) #{@preuser.phone}"
-      end
-
-      @preuser.save
     end
+
+    # if (correct_format(body))   # included message format
+    if true
+      message += "The brightest minds in Madison are plugging away at your question as you read this, your answer is on its way"
+      parse_question(body)
+      @preuser.status = 1
+    else        # anything else
+      message += "Simply reply in the following format to get started.\n\nFormat: college class_number question\n(E.g. CS 368 How pointers work in c++?) #{@preuser.phone}"
+    end
+
+    @preuser.save
 
     if (@preuser.status == 0)       # new user? send gif :-)
       response = Twilio::TwiML::Response.new do |r|
@@ -65,7 +65,7 @@ class TwilioController < ApplicationController
     question = input[7..-1]
 
     # @preuser.questions
-    return "code #{college_code}, course: #{course} ,question: #{question}"
+    return input
   end
 
   def correct_format(from_message)
