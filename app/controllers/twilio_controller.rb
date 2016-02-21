@@ -16,7 +16,6 @@ class TwilioController < ApplicationController
 
     message = @client.messages.create from: '16084674004', to: params[:num], body: "Welcome to Ask A Badger. " + @initial_msg
     render plain: message.status
-    render json: nil, status: :ok
   end
 
   def reply
