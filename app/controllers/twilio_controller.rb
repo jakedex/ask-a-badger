@@ -51,14 +51,14 @@ class TwilioController < ApplicationController
     render text: response.text
   end
 
-  # def send data
-  #   # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-  #   client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
-  #   num_to = params[:num] ? params[:num] : (params[:From][1..-1]).to_i
+  def send data
+    # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+    client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
+    num_to = params[:num] ? params[:num] : (params[:From][1..-1]).to_i
 
-  #   message = client.messages.create from: '16084674004', to: num_to, body: "Welcome to Ask A Badger. " + @initial_msg
-  #   render plain: message.status
-  # end
+    message = client.messages.create from: '16084674004', to: num_to, body: "Welcome to Ask A Badger. " + @initial_msg
+    render plain: message.status
+  end
 
   def status
     # the status can be found in params['MessageStatus']
