@@ -5,12 +5,16 @@ class TwilioController < ApplicationController
   # enable :sessions
 
   # @number_to_send_to = params[:number_to_send_to]
-  @twilio_phone_number = "16084674004"
+  def initialize
+    @twilio_phone_number = "16084674004"
+    @initial_msg = "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
+  end
 
-  def message
+  def send data
     # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
     @client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
-    message = @client.messages.create from: '16084674004', to: '16129404706', body: 'Learning to send SMS you are.', media_url: 'https://media.giphy.com/media/ypqHf6pQ5kQEg/giphy.gif', status_callback: request.base_url + '/twilio/status'
+
+    message = @client.messages.create from: '16084674004', to: params[:num], body: "Welcome to Ask A Badger. " + @initial_msg
     render plain: message.status
   end
 
@@ -31,10 +35,10 @@ class TwilioController < ApplicationController
       message += parse_question(body)
       @preuser.status = 2
     elsif (@preuser.status == 0)   # first message
-      message += "Simply reply in the following format to get started.\n\nFormat: college class_number question\n(E.g. CS 368 How pointers work in c++?) #{@preuser.phone}"
+      message += @initial_msg
       @preuser.status = 1
     else # not first, wrong input
-      message += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: college class_number question"
+      message += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
     end
 
     @preuser.save
@@ -63,12 +67,18 @@ class TwilioController < ApplicationController
   end
 
   def parse_question(input)
-    college_code = input[0..1]
-    course = input[3..5]
-    question = input[7..-1]
+    course_code = input[0..4]
+    question = input[6..-1]
 
-    @preuser.questions
-    return "code: #{college_code}, course: #{course}, q: #{question}"
+    if (course = Course.find_by(title:course_code)) == nil
+      # create new course
+      course = Course.new(title:course_code)
+    end
+
+    # add question
+    course.questions.new()
+
+    # return "course: #{course}, q: #{question}"
   end
 
   def correct_format(from_message)
