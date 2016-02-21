@@ -26,8 +26,7 @@ class TwilioController < ApplicationController
       message = "Welcome to Ask A Badger. "
     end
 
-    # if (correct_format(body))   # included message format
-    if true
+    if (correct_format(body))   # included message format
       message += "The brightest minds in Madison are plugging away at your question as you read this, your answer is on its way"
       message += parse_question(body)
       @preuser.status = 1
@@ -66,7 +65,7 @@ class TwilioController < ApplicationController
     question = input[7..-1]
 
     # @preuser.questions
-    return input
+    return "code: #{college_code}, course: #{course}, q: #{question}"
   end
 
   def correct_format(from_message)
