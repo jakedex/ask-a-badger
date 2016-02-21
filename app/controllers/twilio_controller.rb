@@ -29,9 +29,12 @@ class TwilioController < ApplicationController
     if (correct_format(body))   # included message format
       message += "The brightest minds in Madison are plugging away at your question as you read this, your answer is on its way"
       message += parse_question(body)
-      @preuser.status = 1
-    else        # anything else
+      @preuser.status = 2
+    elsif (@preuser.status == 0)   # first message
       message += "Simply reply in the following format to get started.\n\nFormat: college class_number question\n(E.g. CS 368 How pointers work in c++?) #{@preuser.phone}"
+      @preuser.status = 1
+    else # not first, wrong input
+      message += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: college class_number question"
     end
 
     @preuser.save
