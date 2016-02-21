@@ -83,7 +83,7 @@ class TwilioController < ApplicationController
   end
 
   def correct_format(from_message)
-    from_message =~ /[a-zA-Z][a-zA-Z]\s\d{3}\s[a-zA-Z]+.*/ ? true : false
+    from_message =~ /[a-zA-Z][a-zA-Z]\d{3}\s[a-zA-Z]+.*/ ? true : false
   end
 
   def convo
