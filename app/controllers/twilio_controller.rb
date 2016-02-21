@@ -67,7 +67,7 @@ class TwilioController < ApplicationController
     course = input[3..5]
     question = input[7..-1]
 
-    # @preuser.questions
+    @preuser.questions
     return "code: #{college_code}, course: #{course}, q: #{question}"
   end
 

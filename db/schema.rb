@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221042725) do
+ActiveRecord::Schema.define(version: 20160221051219) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "question_id"
   end
 
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
   add_index "answers", ["user_id"], name: "index_answers_on_user_id"
 
   create_table "courses", force: :cascade do |t|
@@ -47,9 +49,11 @@ ActiveRecord::Schema.define(version: 20160221042725) do
     t.integer  "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "course_id"
   end
 
   add_index "questions", ["answer_id"], name: "index_questions_on_answer_id"
+  add_index "questions", ["course_id"], name: "index_questions_on_course_id"
   add_index "questions", ["preuser_id"], name: "index_questions_on_preuser_id"
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
 
