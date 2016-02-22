@@ -1,4 +1,6 @@
 class TwilioController < ApplicationController
+  include TwilioHelper
+
   skip_before_action :verify_authenticity_token
 
   def initialize
@@ -12,7 +14,7 @@ class TwilioController < ApplicationController
     client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
     # num_to = params[:num] ? params[:num] : (params[:From][1..-1]).to_i
 
-    send_to = params[:num]
+    send_to = remove_country_code params[:num]
     if (@preuser = Preuser.find_by(phone:send_to)) == nil
       # create new user
       @preuser = Preuser.new(phone:send_to)
@@ -30,7 +32,7 @@ class TwilioController < ApplicationController
   end
 
   def reply
-    from = params[:From]
+    from = remove_country_code params[:From]
     body = params[:Body]
     msg_content = ""
 
@@ -75,24 +77,5 @@ class TwilioController < ApplicationController
     # send back an empty response
 
     render text: Twilio::TwiML::Response.new.text
-  end
-
-  def parse_question(input)
-    course_code = input[0..4]
-    question = input[6..-1]
-
-    # if (course = Course.find_by(title:course_code)) == nil
-    #   # create new course
-    #   course = Course.new(title:course_code)
-    # end
-
-    # add question
-    # course.questions.new()
-
-    # return "course: #{course}, q: #{question}"
-  end
-
-  def correct_format(from_message)
-    from_message =~ /[a-zA-Z][a-zA-Z]\d{3}\s[a-zA-Z]+.*/ ? true : false
   end
 end
