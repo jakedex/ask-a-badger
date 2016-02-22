@@ -12,9 +12,16 @@ class TwilioController < ApplicationController
     client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
     # num_to = params[:num] ? params[:num] : (params[:From][1..-1]).to_i
 
+    send_to = params[:num]
+    if (@preuser = Preuser.find_by(phone:send_to)) == nil
+      # create new user
+      @preuser = Preuser.new(phone:from)
+      @preuser.status = 1
+    end
+
     message = client.messages.create(
       from: @twilio_phone_number,
-      to: params[:num],
+      to: send_to,
       body: "Welcome to Ask A Badger. " + @initial_msg,
       media_url: @giphy
     )
@@ -50,7 +57,7 @@ class TwilioController < ApplicationController
       response = Twilio::TwiML::Response.new do |r|
         r.Message do |msg|
           msg.Body msg_content
-          msg.Media 'https://media.giphy.com/media/ypqHf6pQ5kQEg/giphy.gif'
+          msg.Media @giphy
         end
       end
     else
