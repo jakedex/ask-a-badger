@@ -30,7 +30,7 @@ class TwilioController < ApplicationController
   end
 
   def reply
-    from = params[:From][1..-1]
+    from = params[:From]
     body = params[:Body]
     msg_content = ""
 
