@@ -1,0 +1,248 @@
+/* line 4, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* line 12, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+/* line 16, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #444;
+  font-weight: 600; }
+
+/* line 22, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.main h1 {
+  color: #fff; }
+
+/* red header */
+/* line 29, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.redHalf {
+  background-color: #861108;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 10px; }
+
+/* line 36, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.lead {
+  display: inline-block;
+  margin-top: 20px; }
+
+/* line 41, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.lead > a {
+  text-decoration: underline;
+  color: white; }
+
+/* submit form */
+/* line 48, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.box {
+  margin: 20px auto;
+  max-width: 400px;
+  height: 100px; }
+
+/* line 54, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.sending {
+  display: none;
+  margin: 0 auto;
+  width: 380px;
+  height: 70px;
+  font-size: 3em; }
+
+/* line 62, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+#sendingBar {
+  margin-top: -400px;
+  height: 3.5px;
+  width: 380px;
+  background-color: #e6e8eb; }
+
+/* bootstrap progress bar */
+/* line 70, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.progress {
+  margin-top: -4px;
+  height: 4px;
+  border-radius: 0px; }
+
+/* line 76, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.progress-bar {
+  background: #517C07; }
+
+/* line 80, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+input[type="tel"] {
+  /*    display: none;*/
+  appearance: none;
+  width: 70%;
+  max-width: 380px;
+  height: 70px;
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  border-bottom: solid 4px #600700;
+  text-align: center;
+  transition: border-color 0.6s ease; }
+
+/* line 94, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+::-webkit-input-placeholder {
+  color: #600700;
+  transition: color 0.3s ease; }
+
+/* line 99, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+:focus::-webkit-input-placeholder {
+  color: transparent;
+  transition: color 0.3s ease; }
+
+/* line 104, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+input[type="tel"]:focus {
+  outline: none;
+  border: none;
+  color: #e6e8eb;
+  border-bottom: solid 4px #e6e8eb;
+  transition: border-color 1s ease; }
+
+/* line 112, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+input[type="submit"] {
+  appearance: none;
+  width: 380px;
+  height: 50px;
+  font-size: 1.05em;
+  background: transparent;
+  color: #600700;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.5s ease;
+  outline: none;
+  border: none; }
+
+/* line 128, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+input[type="submit"]:hover {
+  color: #600700 !important;
+  cursor: pointer;
+  transition: color 0.5s ease; }
+
+/* badger svg */
+/* line 136, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+#badger {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px; }
+
+/* text link color / body text */
+/* line 146, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.text-muted {
+  color: white; }
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+/* line 152, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+/* line 157, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.footer > small {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  float: none; }
+
+/* line 164, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.footer > nav > ul {
+  float: none; }
+
+/* Change success button color */
+/* line 174, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus,
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  background-color: #C2B39C;
+  border-color: #C2B39C; }
+
+/* line 179, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.btn-success {
+  background-color: #DFCDB3;
+  border-color: #DFCDB3; }
+
+/* input form */
+/* line 185, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+#numInput {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+/* Custom page footer */
+/* line 193, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.footer {
+  padding-top: 19px;
+  padding-bottom: 38px;
+  color: black;
+  border-top: 1px solid #e5e5e5; }
+
+/* line 200, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.container-narrow > hr {
+  margin: 30px 0; }
+
+/* Main marketing message and sign up button */
+/* line 205, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.main {
+  text-align: center; }
+
+/* line 209, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px; }
+
+/* Supporting marketing content */
+/* line 215, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.marketing {
+  margin: 40px 0; }
+
+/* line 223, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+.marketing p + h4 {
+  margin-top: 28px; }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* line 230, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+  .footer > nav > ul {
+    float: right; }
+  /* line 234, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+  .footer > small {
+    margin: 0;
+    display: block;
+    text-align: left;
+    float: left; }
+  /* line 241, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+  input[type="tel"] {
+    width: auto;
+    font-size: 3em; }
+  /* line 246, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+  .container {
+    max-width: 730px; }
+  /* Remove the padding we set earlier */
+  /* line 253, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0; }
+  /* Space out the masthead */
+  /* line 259, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+  .header {
+    margin-bottom: 30px; }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  /* line 264, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/static_pages.scss */
+  .jumbotron {
+    border-bottom: 0; } }
+
+/*# sourceMappingURL=static_pages.css.map */
