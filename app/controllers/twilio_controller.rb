@@ -17,6 +17,7 @@ class TwilioController < ApplicationController
       # create new user
       @preuser = Preuser.new(phone:send_to)
       @preuser.status = 1
+      @preuser.save
     end
 
     message = client.messages.create(
