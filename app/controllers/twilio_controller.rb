@@ -15,7 +15,7 @@ class TwilioController < ApplicationController
     send_to = params[:num]
     if (@preuser = Preuser.find_by(phone:send_to)) == nil
       # create new user
-      @preuser = Preuser.new(phone:from)
+      @preuser = Preuser.new(phone:send_to)
       @preuser.status = 1
     end
 
