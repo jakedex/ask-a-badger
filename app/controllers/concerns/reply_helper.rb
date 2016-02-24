@@ -4,6 +4,7 @@ module ReplyHelper
   def initialize
     @initial_msg = "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
     @valid_response = "The brightest minds in Madison are plugging away at your question as you read this. Hold tight, your answer is on its way."
+    @error_msg = "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
   end
 
   # TODO remember to reset attempts/status to zero after answering
@@ -27,25 +28,24 @@ module ReplyHelper
       return handle_oddcase(user)
     end
 
+    # handle help response
+    if(body.lower == 'help')
+      return "This is our unimplemented help message ;-)"
+    end
+
     if (correct_format(body))
       reply_msg += @valid_response
       parse_question(body)
       user.status = 2
-    else
-
+    elsif (@preuser.status == 0)   # first message
+      reply_msg += @initial_msg
+    else # not first, wrong input
+      reply_msg += @error_msg
+      user.attempts = user.attemps + 1
+    end
 
     user.save
     return reply_msg
   end
-      if (correct_format(body))
-      msg_content +=
-      parse_question(body)
-      @preuser.status = 2
-    elsif (@preuser.status == 0)   # first message
-      msg_content += @initial_msg
-    else # not first, wrong input
-      msg_content += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
-    end
-
 
 end

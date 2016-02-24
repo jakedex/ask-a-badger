@@ -45,7 +45,6 @@ class TwilioController < ApplicationController
     # create new user if needed
     if (@preuser = Preuser.find_by(phone:from)) == nil
       @preuser = Preuser.new(phone:from)
-      @preuser.status = 0
       msg_content = "Welcome to Ask A Badger. "
     end
 
