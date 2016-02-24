@@ -1,8 +1,18 @@
 module TwilioHelper
 
-  def remove_country_code num
-    num.length > 10 ? num[1..-1] : num
+# case: no num code
+# case: num code (1)
+# case: num code and pre (+1)
+# case: just pre? (+)
+def remove_country_code num
+  # strip +
+  if (num[0] == '+')
+    num = num[1..-1]
   end
+
+  # strip 1
+  num.length > 10 ? num[1..-1] : num
+end
 
   def parse_question(input)
     course_code = input[0..4]
