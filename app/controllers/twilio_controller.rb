@@ -1,5 +1,6 @@
 class TwilioController < ApplicationController
   include TwilioHelper
+  include ReplyHelper
   skip_before_action :verify_authenticity_token
 
   def initialize
@@ -34,31 +35,24 @@ class TwilioController < ApplicationController
   # -- Status codes --
   # - 0 : new user, send gif
   # - 1 : has been sent gif but sent something invalid
-  # - 2 : has asked valid question
+  # - 2 : has asked valid question, awaiting response
   # - 3 : question answered, standby mode
   def reply
     from = remove_country_code params[:From]
     body = params[:Body]
     msg_content = ""
 
+    # create new user if needed
     if (@preuser = Preuser.find_by(phone:from)) == nil
-      # create new user
       @preuser = Preuser.new(phone:from)
       @preuser.status = 0
       msg_content = "Welcome to Ask A Badger. "
     end
 
-    if (correct_format(body))   # included message format
-      msg_content += "The brightest minds in Madison are plugging away at your question as you read this- your answer is on its way"
-      parse_question(body)
-      @preuser.status = 2
-    elsif (@preuser.status == 0)   # first message
-      msg_content += @initial_msg
-    else # not first, wrong input
-      msg_content += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
-    end
+    msg_content = handle_reply(@preuser, body, msg_content)
 
-    if (@preuser.status == 0)       # new user? send gif :-)
+    # new user? send gif :-)
+    if (@preuser.status == 0)
       response = Twilio::TwiML::Response.new do |r|
         r.Message do |msg|
           msg.Body msg_content
@@ -68,6 +62,7 @@ class TwilioController < ApplicationController
 
       @preuser.status = 1
     else
+      # existing, no gif ;(
       response = Twilio::TwiML::Response.new do |r|
         r.Message msg_content
       end

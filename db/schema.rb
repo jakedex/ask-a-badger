@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221051219) do
+ActiveRecord::Schema.define(version: 20160224061229) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "user_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160221051219) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "status"
+    t.integer  "attempts"
   end
 
   add_index "preusers", ["phone"], name: "index_preusers_on_phone", unique: true
