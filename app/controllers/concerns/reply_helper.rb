@@ -25,7 +25,7 @@ module ReplyHelper
     end
 
     # handle help response
-    if(body.downcase == 'help')
+    if(body.downcase == 'helpme')
       return "This is our unimplemented help message ;-)"
     end
 
