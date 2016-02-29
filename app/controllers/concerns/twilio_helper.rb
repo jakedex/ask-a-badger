@@ -14,19 +14,20 @@ module TwilioHelper
     num.length > 10 ? num[1..-1] : num
   end
 
-  def parse_question(input)
+  def parse_question(input, user)
     course_code = input[0..4]
     question = input[6..-1]
 
-    # if (course = Course.find_by(title:course_code)) == nil
-    #   # create new course
-    #   course = Course.new(title:course_code)
-    # end
+    if (course = Course.find_by(title:course_code)) == nil
+      # create new course
+      course = Course.new(title:course_code)
+    end
 
     # add question
-    # course.questions.new()
+    question = course.questions.new(preuser_id: user.id, body: question, title: "Test title")
+    user.questions << question
 
-    # return "course: #{course}, q: #{question}"
+    course.save
   end
 
   def correct_format(from_message)

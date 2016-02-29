@@ -6,7 +6,7 @@ class TwilioController < ApplicationController
 
   def initialize
     @twilio_phone_number = "16084674004"
-    @initial_msg = "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
+    @initial_msg = "Simply reply in the following format to get started.\n\nFormat: COURSE QUESTION\n(E.g. CS368 How do pointers work in c++?)"
     @giphy = 'https://media.giphy.com/media/ypqHf6pQ5kQEg/giphy.gif'
   end
 

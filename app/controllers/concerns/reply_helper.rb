@@ -31,12 +31,12 @@ module ReplyHelper
 
     if (correct_format(body))
       reply_msg += "The brightest minds in Madison are plugging away at your question as you read this. Hold tight, your answer is on its way."
-      parse_question(body)
+      parse_question(body, user)
       user.status = 2
     elsif (user.status == 0)   # first message
-      reply_msg += "Simply reply in the following format to get started.\n\nFormat: course_number question\n(E.g. CS368 How do pointers work in c++?)"
+      reply_msg += "Simply reply in the following format to get started.\n\nFormat: COURSE QUESTION\n(E.g. CS368 How do pointers work in c++?)"
     else # not first, wrong input
-      reply_msg += "Hmm, something went wrong. Did you send your reply in the following format?\nFormat: course_number question"
+      reply_msg += "Hmm, something went wrong. Did you send your reply in the following format?\nCOURSE QUESTION"
       user.attempts = user.attempts + 1
     end
 
