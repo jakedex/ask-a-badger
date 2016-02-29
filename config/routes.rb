@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  # get 'questions/update'
+
+  # get 'questions/edit'
+
+  # get 'questions/destroy'
+
+  get 'questions/index'
+
+  get 'questions/show'
+
   get 'preusers/new'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
