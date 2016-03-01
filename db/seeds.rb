@@ -44,3 +44,11 @@ q_c.save
 c_c = Course.create(title: "CS407")
 q_c.course_id = c_c.id
 q_c.save
+
+# create new answer for q_c
+ans_c = Answer.create(body: "Et justo vivamus sem, consequat diam massa a morbi,
+ eros et magna vehicula mauris vivamus, mattis arcu ultricies nam aliquet,
+ mauris duis. Facere dignissim mi ut, euismod vitae enim, nam duis.", question_id: q_c.id)
+# TODO q/a schema needs some work
+q_c.answer_id = ans_c.id
+q_c.save
