@@ -1,2 +1,18 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<%= render 'layouts/nav' %>
+<div class="ContentWrapper">
+  <div class="col3-left">
+    <div class="class-list">
+      <h3>Classes</h3>
+      <ul class="courses">
+        <% @courses.each do |course| %>
+        <li class="course"><%= course.title %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col3-center">
+    <h3><%= @question.title %></h3>
+    <p><%= @question.body %></p>
+  </div>
+  
+</div>

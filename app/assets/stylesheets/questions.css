@@ -36,45 +36,55 @@
     padding-bottom: 8px;
     border-bottom: 1px solid #e2e2e2; }
 
-/* line 53, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 48, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+.courses {
+  list-style: none;
+  padding: 0; }
+  /* line 52, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  .courses .course {
+    font-size: 13px;
+    color: #999;
+    padding: 4px 0; }
+
+/* line 64, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-header {
   font-size: 13px;
   color: #999;
   margin-bottom: 4px; }
 
-/* line 59, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 70, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-title {
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-size: 19px;
   font-weight: bold;
   margin-bottom: 4px; }
-  /* line 66, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 77, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-title .question-link {
     color: #444;
     text-decoration: none; }
 
-/* line 72, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 83, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-answers {
   margin-top: 4px;
   font-size: 13px; }
-  /* line 76, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 87, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-answers .answers-link {
     color: #999; }
 
-/* line 82, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 93, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-body {
   font-family: Georgia,Times,"Times New Roman",serif;
   font-size: 15px;
   color: #7E7E7E; }
 
-/* line 88, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 99, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-misc {
   display: flex;
   align-items: center;
   padding: 8px 0 16px;
   margin-bottom: 16px;
   border-bottom: 1px solid #e2e2e2; }
-  /* line 95, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 106, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-misc .answer-btn {
     color: #937f52;
     background: #D1C6AD;
@@ -83,23 +93,23 @@
     border: 1px solid #937f52;
     padding: 3px 9px;
     transition: background 0.5s; }
-    /* line 105, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+    /* line 116, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
     .questions .question .question-misc .answer-btn .icon {
       display: block;
       float: left;
       font-size: 100%;
       color: #937f52; }
-    /* line 112, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+    /* line 123, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
     .questions .question .question-misc .answer-btn .answer-text {
       font-size: 13px;
       display: block;
       float: left;
       margin-left: 6px;
       margin-top: 1px; }
-    /* line 120, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+    /* line 131, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
     .questions .question .question-misc .answer-btn:hover {
       background: #e3ddce; }
-  /* line 125, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 136, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-misc .report-link {
     font-size: 13px;
     margin-left: 20px;

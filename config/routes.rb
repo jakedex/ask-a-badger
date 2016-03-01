@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # get 'questions/destroy'
 
+  get 'questions/:id' => 'questions#show'
   get 'questions' => 'questions#index'
   get 'questions/index' => 'questions#index'
 

@@ -45,6 +45,17 @@
   }
 }
 
+.courses {
+  list-style: none;
+  padding: 0;
+  
+  .course {
+    font-size: 13px;
+    color: #999;
+    padding: 4px 0;
+  }
+}
+
 .questions {
   
   .question {
@@ -128,7 +139,5 @@
         color: #999;
       }
     }
-    
-    
   }
 }
