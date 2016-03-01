@@ -8,72 +8,73 @@
   padding-right: 32px; }
   /* line 13, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .ContentWrapper h3 {
+    color: #444;
     font-size: 15px;
     font-weight: 500;
     padding-bottom: 8px;
     border-bottom: 1px solid #e2e2e2; }
 
-/* line 21, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 22, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .col3-center {
   width: 572px;
   margin-left: 30px;
   min-height: 300px; }
-  /* line 26, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 27, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .col3-center h3 {
     font-weight: 900; }
 
-/* line 33, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 34, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .col3-left {
   width: 142px;
   margin-left: 30px;
   font-size: 13px;
   min-height: 300px; }
-  /* line 39, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 40, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .col3-left h3 {
     font-size: 15px;
     font-weight: 500;
     padding-bottom: 8px;
     border-bottom: 1px solid #e2e2e2; }
 
-/* line 52, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 53, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-header {
   font-size: 13px;
   color: #999;
   margin-bottom: 4px; }
 
-/* line 58, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 59, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-title {
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-size: 19px;
   font-weight: bold;
   margin-bottom: 4px; }
-  /* line 65, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 66, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-title .question-link {
     color: #444;
     text-decoration: none; }
 
-/* line 71, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 72, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-answers {
   margin-top: 4px;
   font-size: 13px; }
-  /* line 75, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 76, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-answers .answers-link {
     color: #999; }
 
-/* line 81, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 82, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-body {
   font-family: Georgia,Times,"Times New Roman",serif;
   font-size: 15px;
   color: #7E7E7E; }
 
-/* line 87, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+/* line 88, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
 .questions .question .question-misc {
   display: flex;
   align-items: center;
   padding: 8px 0 16px;
   margin-bottom: 16px;
   border-bottom: 1px solid #e2e2e2; }
-  /* line 94, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 95, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-misc .answer-btn {
     color: #937f52;
     background: #D1C6AD;
@@ -81,24 +82,24 @@
     border-radius: 3px;
     border: 1px solid #937f52;
     padding: 3px 9px;
-    transition: background 1s; }
-    /* line 104, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+    transition: background 0.5s; }
+    /* line 105, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
     .questions .question .question-misc .answer-btn .icon {
       display: block;
       float: left;
       font-size: 100%;
       color: #937f52; }
-    /* line 111, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+    /* line 112, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
     .questions .question .question-misc .answer-btn .answer-text {
       font-size: 13px;
       display: block;
       float: left;
       margin-left: 6px;
       margin-top: 1px; }
-    /* line 119, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+    /* line 120, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
     .questions .question .question-misc .answer-btn:hover {
       background: #e3ddce; }
-  /* line 124, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
+  /* line 125, /Users/jakedex/Developer/web/ask-a-badger/app/assets/stylesheets/questions.scss */
   .questions .question .question-misc .report-link {
     font-size: 13px;
     margin-left: 20px;

@@ -11,6 +11,7 @@
   padding-right: 32px;
   
   h3 {
+    color: #444;
     font-size: 15px;
     font-weight: 500;
     padding-bottom: 8px;
@@ -98,7 +99,7 @@
         border-radius: 3px;
         border: 1px solid darken( #D1C6AD, 30%);
         padding: 3px 9px;
-        transition: background 1s;
+        transition: background .5s;
         
         
         .icon {
