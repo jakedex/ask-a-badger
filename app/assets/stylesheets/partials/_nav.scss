@@ -1,0 +1,90 @@
+.logged-in-head {
+  font-family: 'Lato';
+  background: #880F00;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 53px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c80F00;
+  box-shadow: 0 3px 2px 1px rgba(200,200,200,0.2);
+}
+
+.header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1002px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  font-family: 'Montserrat';
+  font-weight: 900;
+  font-size: 20px;
+  
+  a {
+    color: white;
+    
+    &:hover, &:visited, &:active, &:link {
+      text-decoration: none;
+    }
+  }
+}
+
+.header-contents {
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    backgroud-color: #333;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    
+    .nav-icon {
+      display: block;
+      float: left;
+    }
+    
+    .nav-text {
+      display: block;
+      float: left;
+      margin-top: 5.5px;
+      margin-left: 6px;
+    }
+    
+    .google-icon {
+      margin-top: 3px;
+      width: 25px;
+      height: 25px;
+      background-size: 25px 25px;
+      background-image: image-url("google-icon-test.png");
+    }
+    
+    
+    a {
+      font-size: 14px;
+      padding: 13px 14px;
+      display: block;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    a:hover:not(.active) {
+      background-color: darken(#880F00, 5%);
+    }
+
+    .active {
+      background-color: #4CAF50;
+    }
+  }
+}

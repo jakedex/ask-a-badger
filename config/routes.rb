@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # get 'questions/destroy'
 
-  get 'questions/index'
+  get 'questions' => 'questions#index'
+  get 'questions/index' => 'questions#index'
 
   get 'questions/show'
 

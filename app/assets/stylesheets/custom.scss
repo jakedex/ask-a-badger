@@ -1,33 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "ionicons";
 
-/* footer */
+// Import media queries
+@import "partials/breakpoints";
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
+// Import functions/config
+@import "partials/functions";
+@import "partials/config";
 
-footer a {
-  color: #555;
-}
+// Import all partials for compile
+@import "partials/footer";
+@import "partials/type";
 
-footer a:hover {
-  color: #222;
-}
+@import "partials/search";
 
-footer small {
-  float: left;
-}
+// @include desktop_wide(){
+//     margin: 0 80px 0px 80px;
+// };
 
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
+.ContentWrapper {
+  width: 1002px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
