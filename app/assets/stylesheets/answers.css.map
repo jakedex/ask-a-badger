@@ -2,9 +2,10 @@
   "version": 3,
   "file": "answers.css",
   "sources": [
-    "answers.scss"
+    "answers.scss",
+    "answers/_answer.scss"
   ],
   "sourcesContent": [],
-  "mappings": "",
+  "mappings": ";ACII,OAAO,CAAC,UAAU,CAAC,eAAe,CAAlB;EACd,WAAW,EAAE,GAAI;EACjB,KAAK,EAAE,IAAK,GAFG",
   "names": []
 }

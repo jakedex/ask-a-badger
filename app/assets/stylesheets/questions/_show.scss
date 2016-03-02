@@ -1,5 +1,14 @@
+.unanswered {
+  
+}
+
 .unanswered-title {
   font-style: italic;
+  width: 100%;
+  display: block;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .response {

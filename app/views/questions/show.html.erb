@@ -3,10 +3,15 @@
   <div class="col3-lg left">
     <h2><%= @question.title %></h2>
     <p><%= @question.body %></p>
-      <div class="question-misc question-sep">
-        <a href="" class="question-btn"><i class="icon ion-ios-undo-outline"></i><span class="answer-text">Request More Information</span></a>
-        <a href="" class="report-link">Report</a>
-      </div>
+      
+      <% if !@question.answer_id %>
+        <div class="question-misc ">
+          <a href="" class="question-btn"><i class="icon ion-ios-undo-outline"></i><span class="answer-text">Request More Information</span></a>
+          <a href="" class="report-link">Report</a>
+        </div>
+      <% end %>
+        
+      
       <div class="answers">
         <% if @question.answer_id %>
           <%= render @answer %>
@@ -15,7 +20,7 @@
             <span class="unanswered-title">This question hasn't been answered yet. </span>
             <div class="response">
               <h3>Can you answer this question?</h3>
-              <a href="" class="question-btn"><i class="icon ion-edit"></i><span class="answer-text">Answer</span></a>
+              <a href="#" class="question-btn show-answer-btn"><i class="icon ion-edit"></i><span class="answer-text">Answer</span></a>
               <%= render 'layouts/answer_form' %>
             </div>
           </div>

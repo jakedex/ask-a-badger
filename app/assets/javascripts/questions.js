@@ -1,5 +1,14 @@
 $(function () {
 //  console.log($("#answer_btn"));
+  $('form#new_answer').hide();
+  
+  // show trix ele
+  var show_answer_btn = $('.show-answer-btn');
+  show_answer_btn.click(function (event){
+    show_answer_btn.hide();
+    
+    $('form#new_answer').show();
+  });
   
   $('#answer_btn').click(function (event) { //Catch form submit event
     console.log('caught');

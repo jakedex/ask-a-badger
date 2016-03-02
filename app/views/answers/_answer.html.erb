@@ -1,3 +1,8 @@
 <div class="answer">
-  <p><%= answer.body %></p>
+  <span class="answer-title">Answer</span>
+  <div class="responder">
+    <%= image_tag("google-icon-test.png") %>
+    <span class="responder-name">Jake Dexheimer</span>
+  </div>
+  <p><%= answer.body.html_safe %></p>
 </div>
