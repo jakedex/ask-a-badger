@@ -21,6 +21,8 @@ $(document).ready(function () {
       }
       
       console.log(plain);
+      
+      // add 
 
 //      document.forms["new_answer"].submit(); //Go ahead and postback
     }
