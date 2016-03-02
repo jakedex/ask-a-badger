@@ -4,5 +4,5 @@
   <%= label_tag(:reply_text, "as text") %>
   <%= radio_button_tag(:reply, "link") %>
   <%= label_tag(:reply_link, "as link") %>
-  <%= f.submit "Submit Answer" %>
+  <%= submit_tag "Submit Answer", :type => 'button', :id => 'answer_btn' %>
 <% end %>

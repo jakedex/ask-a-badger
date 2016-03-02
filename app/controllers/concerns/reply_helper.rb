@@ -44,4 +44,8 @@ module ReplyHelper
     return reply_msg
   end
 
+  def handle_answer(user, answer)
+
+  end
+
 end
