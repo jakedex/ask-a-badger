@@ -1,16 +1,16 @@
 <%= render 'layouts/nav' %>
 <div class="ContentWrapper">
-  <div class="col3-left">
+  <div class="col3-sm">
     <div class="class-list">
       <h3>Classes</h3>
-      <ul class="courses">
+      <ul class="render-list">
         <% @courses.each do |course| %>
-        <li class="course"><%= course.title %></li>
+        <li class="render-item"><%= course.title %></li>
         <% end %>
       </ul>
     </div>
   </div>
-  <div class="col3-center">
+  <div class="col3-lg left">
     <h3>Top questions for you</h3>
     
     <div class="questions">

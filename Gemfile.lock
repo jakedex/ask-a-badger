@@ -177,6 +177,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    trix (0.9.5)
+      rails
     turbolinks (2.5.3)
       coffee-rails
     twilio-ruby (3.16.1)
@@ -217,6 +219,7 @@ DEPENDENCIES
   spring
   sqlite3
   therubyracer
+  trix
   turbolinks
   twilio-ruby (~> 3.12)
   uglifier (>= 1.3.0)

@@ -1,0 +1,149 @@
+.left {
+  margin-left: 30px;
+}
+
+.left-lg {
+  margin-left: 86px;
+}
+
+.ContentWrapper {
+  display: flex;
+  width: 1002px;
+  margin: 0 auto;
+  padding-top: 80px;
+//  padding-left: 32px;
+//  padding-right: 32px;
+  
+  h3 {
+    color: #444;
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e2e2;
+  }
+}
+
+.col3-lg {
+  width: 572px;
+  min-height: 300px;
+  
+  h3 {
+    font-weight: 900;
+  }
+}
+
+.col3-sm{
+  width: 142px;
+//  margin-left: 30px;
+  font-size: 13px;
+  min-height: 300px;
+  
+  h3 {
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e2e2;
+  }
+}
+
+.col3-md {
+  @extend .col3-sm;
+  width: 314px;
+}
+
+.render-list {
+  list-style: none;
+  padding: 0;
+  
+  .render-item {
+    font-size: 13px;
+    color: #999;
+    padding: 4px 0;
+  }
+}
+
+.questions {
+  
+  .question {
+    
+    
+    .question-header {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    
+    .question-title {
+      font-family: 'Montserrat', Helvetica, sans-serif;;
+      font-size: 19px;
+      font-weight: bold;
+      
+      margin-bottom: 4px;
+      
+      .question-link {
+        color: #444;
+        text-decoration: none;
+      }
+    }
+    
+    .question-answers {
+      margin-top: 4px;
+      font-size: 13px;
+      
+      .answers-link {
+        color: #999;
+      }
+      
+    }
+    
+    .question-body {
+      font-family: Georgia,Times,"Times New Roman",serif;
+      font-size: 15px;
+      color: #7E7E7E;
+    }
+  }
+}
+
+.question-btn {
+  color: darken( #D1C6AD, 30%);
+  background: #D1C6AD;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid darken( #D1C6AD, 30%);
+  padding: 3px 9px;
+  transition: background .5s;
+
+
+  .icon {
+    display: block;
+    float: left;
+    font-size: 100%;
+    color: darken( #D1C6AD, 30%);
+  }
+
+  .answer-text {
+    font-size: 13px;
+    display: block;
+    float: left;
+    margin-left: 6px;
+    margin-top: 1px;
+  }
+
+  &:hover {
+    background: lighten( #D1C6AD, 10%);
+  }
+}
+
+.question-misc {
+  display: flex;
+  align-items: center;
+  padding: 8px 0 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e2e2e2;
+
+  .report-link {
+    font-size: 13px;
+    margin-left: 20px;
+    color: #999;
+  }
+}
