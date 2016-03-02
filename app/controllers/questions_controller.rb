@@ -18,7 +18,8 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @courses = Course.all
 
-    # answer question
-    @answer = Answer.new
+    @answer = @question.answer_id ? Answer.find(@question.answer_id) : nil
+    # answer question with form
+    @new_answer = Answer.new
   end
 end

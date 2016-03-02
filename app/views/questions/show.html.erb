@@ -9,9 +9,7 @@
       </div>
       <div class="answers">
         <% if @question.answer_id %>
-          <div class="answer">
-            
-          </div>
+          <%= render @answer %>
         <% else %>
           <div class="unanswered">
             <span class="unanswered-title">This question hasn't been answered yet. </span>

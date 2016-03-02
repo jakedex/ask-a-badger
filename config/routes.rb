@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'answers/create'
+  # get 'answers/create'
 
-  get 'answers/new'
+  # get 'answers/new'
 
   # get 'questions/update'
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'questions/:id' => 'questions#show'
   get 'questions' => 'questions#index'
   get 'questions/index' => 'questions#index'
-  post 'quesitons/:id' => 'answers#create'
+  post 'questions/:id' => 'answers#create'
 
   get 'questions/show'
 
