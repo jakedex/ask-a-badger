@@ -1,5 +1,23 @@
 module TwilioHelper
 
+    def send_msg(to, from, msg, media_url)
+    # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+    client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
+
+    # handle no media_url, return message
+    message = media_url ? client.messages.create(
+      from: from,
+      to: to,
+      body: msg,
+      media_url: media_url
+    ) :
+    client.messages.create(
+      from: from,
+      to: to,
+      body: msg
+    )
+  end
+
   # case: no num code
   # case: num code (1)
   # case: num code and pre (+1)

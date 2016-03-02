@@ -11,31 +11,25 @@ class TwilioController < ApplicationController
   end
 
   # sends text to number entered on the frontend
-  def send_msg
-    # @client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-    client = Twilio::REST::Client.new "ACe01140862912970761c0a7db87f0b6d4", "5807030bb9cebf8d8033f1031e03d96c"
+  def send_frontend
+    to = remove_country_code params[:num]
+    body = "Welcome to Ask A Badger. " + @initial_msg
 
-    send_to = remove_country_code params[:num]
-    if (@preuser = Preuser.find_by(phone:send_to)) == nil
+    if (@preuser = Preuser.find_by(phone:to)) == nil
       # create new user
-      @preuser = Preuser.new(phone:send_to)
+      @preuser = Preuser.new(phone:to)
       @preuser.status = 1
       @preuser.save
     end
 
-    message = client.messages.create(
-      from: @twilio_phone_number,
-      to: send_to,
-      body: "Welcome to Ask A Badger. " + @initial_msg,
-      # media_url: @giphy
-    )
+    message = send_msg(to, @twilio_phone_number, body, nil)
+
     render plain: message.status
   end
 
-
   # -- Status codes --
-  # - 0 : new user, send gif
-  # - 1 : has been sent gif but sent something invalid
+  # - 0 : new user, no previous messages
+  # - 1 : has been sent gif msg
   # - 2 : has asked valid question, awaiting response
   # - 3 : question answered, standby mode
   def reply

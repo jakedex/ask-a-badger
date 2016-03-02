@@ -1,7 +1,6 @@
 module ReplyHelper
   include TwilioHelper
 
-  # TODO remember to reset attempts/status to zero after answering
   def handle_oddcase(user)
     # already awaiting response
     if(user.status == 2)
@@ -44,8 +43,18 @@ module ReplyHelper
     return reply_msg
   end
 
-  def handle_answer(user, answer)
+  # TODO send follow up message...
+  # TODO free msg count...
+  def handle_answer(preuser, answer)
+    to = preuser.phone
+    from = "16084674004"
+    body = answer.as_text ? "Answer: " + answer.body_plain : "Your question has been answered at www.asdf.com"
 
+    send_msg(to, from, body, nil)
+    preuser.status = 3
+    preuser.save
+
+    body = "Thanks for using Ask a Badger!"
+    send_msg(to, from, body, nil)
   end
-
 end
