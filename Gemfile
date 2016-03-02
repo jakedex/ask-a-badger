@@ -21,7 +21,6 @@ gem 'omniauth-google-oauth2'
 gem 'twilio-ruby', '~> 3.12'
 gem 'ionicons-rails'
 gem 'trix'
-gem 'bootstrap-switch-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
