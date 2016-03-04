@@ -11,6 +11,8 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @courses = Course.all
+    # answer question with form
+    @new_answer = Answer.new
   end
 
   def show

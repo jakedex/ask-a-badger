@@ -19,8 +19,11 @@
       </a>
     </div>
   <% end %>
-  <div class="question-misc sep-btm">
-    <a href="" class="question-btn"><i class="icon ion-edit"></i><span class="answer-text">Answer</span></a>
-    <a href="" class="report-link">Report</a>
-  </div>
+    <div class="question-misc sep-btm">
+      <% if !question.answer_id %>
+        <a href="#" class="question-btn show-answer-btn"><i class="icon ion-edit"></i><span class="answer-text">Answer</span></a>
+        <%= render 'layouts/answer_form' %>
+      <% end %>
+      <a href="" class="report-link">Report</a>
+    </div>
 </div>

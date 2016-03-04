@@ -1,4 +1,4 @@
-<%= form_for @new_answer, url: {action: "show"}, html: {class: "answer_form"} do |f| %>
+<%= form_for @new_answer, url: {action: "show"}, html: {class: "answer_form", style: "display:none;"} do |f| %>
   <%= f.trix_editor :body %>
   <%= radio_button_tag(:reply, "text", true) %>
   <%= label_tag(:reply_text, "as text") %>
