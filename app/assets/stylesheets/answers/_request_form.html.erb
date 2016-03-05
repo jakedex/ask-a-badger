@@ -1,0 +1,9 @@
+<%= form_for @new_answer, url: {action: "show"}, html: {class: "request_form", style: "display:none;"} do |f| %>
+  <%= f.trix_editor :body %>
+  <div class="submit-options">
+    <a href="#" class="question-btn" id="answer_btn">
+      <i class="icon ion-edit"></i>
+      <span class="answer-text">Submit Request</span>
+    </a>
+  </div>
+<% end %>
