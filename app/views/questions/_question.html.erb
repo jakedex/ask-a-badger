@@ -10,20 +10,19 @@
       <%= question.body %>
     </span>
   </div>
-  <% if question.answer_id %>
-    <div class="question-answers">
-      <a href="" class="answers-link">
-        <span class="rendered-answers">
-          1 Answer
-        </span>
-      </a>
-    </div>
-  <% end %>
-    <div class="question-misc sep-btm">
-      <% if !question.answer_id %>
-        <a href="#" class="question-btn show-answer-btn"><i class="icon ion-edit"></i><span class="answer-text">Answer</span></a>
-        <%= render 'layouts/answer_form' %>
-      <% end %>
+  <div class="question-misc sep-btm">
+    <% if !question.answer_id %>
+      <a href="#" class="question-btn show-answer-btn"><i class="icon ion-edit"></i><span class="answer-text">Answer</span></a>
+      <%= render 'layouts/answer_form' %>
       <a href="" class="report-link">Report</a>
-    </div>
+    <% else %>
+      <div class="question-answers">
+        <a href="/questions/<%= question.id %>" class="answers-link">
+          <span class="rendered-answers">
+            View Answer
+          </span>
+        </a>
+      </div>
+    <% end %>
+  </div>
 </div>

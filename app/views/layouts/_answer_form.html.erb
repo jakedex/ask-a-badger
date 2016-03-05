@@ -1,8 +1,19 @@
 <%= form_for @new_answer, url: {action: "show"}, html: {class: "answer_form", style: "display:none;"} do |f| %>
   <%= f.trix_editor :body %>
-  <%= radio_button_tag(:reply, "text", true) %>
-  <%= label_tag(:reply_text, "as text") %>
-  <%= radio_button_tag(:reply, "link") %>
-  <%= label_tag(:reply_link, "as link") %>
-  <%= submit_tag "Submit Answer", :type => 'button', :id => 'answer_btn' %>
+  <div class="submit-options">
+    <span class="submit-msg">Send answer as: </span>
+    <div class="as-text">
+      <%= radio_button_tag(:reply, "text", true) %>
+      <%= label_tag(:reply_text, "text") %>
+    </div>
+    <div class="as-link">
+      <%= radio_button_tag(:reply, "link") %>
+      <%= label_tag(:reply_link, "link") %>
+    </div>
+    <a href="#" class="question-btn" id="answer_btn">
+      <i class="icon ion-edit"></i>
+      <span class="answer-text">Submit Answer</span>
+    </a>
+
+  </div>
 <% end %>

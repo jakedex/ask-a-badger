@@ -3,15 +3,13 @@
   <div class="col3-lg left">
     <h2><%= @question.title %></h2>
     <p><%= @question.body %></p>
-      
+
       <% if !@question.answer_id %>
         <div class="question-misc ">
           <a href="" class="question-btn"><i class="icon ion-ios-undo-outline"></i><span class="answer-text">Request More Information</span></a>
           <a href="" class="report-link">Report</a>
         </div>
       <% end %>
-        
-      
       <div class="answers">
         <% if @question.answer_id %>
           <%= render @answer %>
