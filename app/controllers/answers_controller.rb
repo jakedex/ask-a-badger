@@ -12,11 +12,12 @@ class AnswersController < ApplicationController
     q.answer_id ||= new_ans.id
     if q.save
       flash[:success] = "Your answer has been submitted successfully."
+      # send out response to asker
+      preuser = Preuser.find(q.preuser_id)
+      handle_answer(preuser, new_ans)
     end
 
-    # send out response to asker
-    preuser = Preuser.find(q.preuser_id)
-    handle_answer(preuser, new_ans)
+
   end
 
   def new

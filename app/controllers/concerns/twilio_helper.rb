@@ -33,7 +33,7 @@ module TwilioHelper
   end
 
   def parse_question(input, user)
-    course_code = input[0..4]
+    course_code = input[0..4].upcase
     question = input[6..-1]
 
     if (course = Course.find_by(title:course_code)) == nil
@@ -42,7 +42,7 @@ module TwilioHelper
     end
 
     # add question
-    question = course.questions.new(preuser_id: user.id, body: question, title: "Test title")
+    question = course.questions.new(preuser_id: user.id, :body => "Test body", :title => question)
     user.questions << question
 
     course.save
