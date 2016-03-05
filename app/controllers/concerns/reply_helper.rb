@@ -43,18 +43,17 @@ module ReplyHelper
     return reply_msg
   end
 
-  # TODO send follow up message...
   # TODO free msg count...
   def handle_answer(preuser, answer)
     to = preuser.phone
     from = "16084674004"
-    body = answer.as_text ? "Answer: " + answer.body_plain : "Your question has been answered at www.asdf.com"
+    body = answer.as_text ? "Answer: " + answer.body_plain : "Your question has been answered at http://www.askabadger.com/questions/#{answer.question_id}"
 
     send_msg(to, from, body, nil)
     preuser.status = 3
     preuser.save
 
-    body = "Thanks for using Ask a Badger!"
+    body = "Thanks for using Ask a Badger! 🌟"
     send_msg(to, from, body, nil)
   end
 end

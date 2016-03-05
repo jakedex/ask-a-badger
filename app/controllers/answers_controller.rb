@@ -10,7 +10,9 @@ class AnswersController < ApplicationController
     new_ans = Answer.create(body: params[:answer][:body], body_plain: body_plain, as_text: as_text, question_id: params[:id])
     q = Question.find(params[:id])
     q.answer_id ||= new_ans.id
-    q.save
+    if q.save
+      flash[:success] = "Your answer has been submitted successfully."
+    end
 
     # send out response to asker
     preuser = Preuser.find(q.preuser_id)

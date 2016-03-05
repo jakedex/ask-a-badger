@@ -8,6 +8,7 @@ $(function () {
     $('form#new_answer').show();
   });
 
+  // submit answer POST
   $('#answer_btn').click(function (event) {
 
     // get editor and it's document
@@ -36,7 +37,9 @@ $(function () {
 
     $.post(form_ele.action, form, function (d) {
       if (d.error) {
-        alert("There was a problem updating your user details");
+        alert("There was a problem submitting your question. Please try again later.");
+      } else {
+        window.location.reload();
       }
     });
   });
