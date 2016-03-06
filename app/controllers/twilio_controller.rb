@@ -31,7 +31,8 @@ class TwilioController < ApplicationController
   # - 0 : new user, no previous messages
   # - 1 : has been sent gif msg
   # - 2 : has asked valid question, awaiting response
-  # - 3 : question answered, standby mode
+  # - 3 : has been sent req
+  # - 4 : question answered, standby mode
   def reply
     from = remove_country_code params[:From]
     body = params[:Body]

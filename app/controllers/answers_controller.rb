@@ -18,6 +18,4 @@ class AnswersController < ApplicationController
     end
   end
 
-  def new
-  end
 end

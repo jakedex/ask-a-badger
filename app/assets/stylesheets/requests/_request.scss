@@ -1,0 +1,28 @@
+.request {
+  .request-title {
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    display: block;
+    padding-top: 10px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+    border-top: 1px solid #e2e2e2;
+  }
+
+  .responder {
+    display: flex;
+    align-items: center;
+
+    .responder-name {
+      display: block;
+      font-weight: 600;
+      font-size: 15px;
+      color: #444;
+      margin-left: 6px;
+
+    }
+  }
+}

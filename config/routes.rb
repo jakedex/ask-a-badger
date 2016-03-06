@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'requests/create'
+
   # get 'answers/create'
 
   # get 'answers/new'
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   get 'questions' => 'questions#index'
   get 'questions/index' => 'questions#index'
   post 'questions/:id/answer' => 'answers#create'
-  post 'questions/:id/request' => 'questions#create_request'
+  post 'questions/:id/request' => 'requests#create'
 
   get 'questions/show'
 
