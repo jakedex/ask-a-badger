@@ -30,15 +30,25 @@
       font-size: 15px;
       color: #444;
       margin-left: 6px;
-
     }
   }
 }
 
-.response {
-  padding: 10px 0;
+.request-response {
+  text-align: left;
+  padding: 10px 0 10px 20px;
   width: 100%;
+  display: block;
   align-self: flex-end;
+
+
+
+  .responder-name {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    color: #444;
+  }
 
   .awaiting-response {
   }

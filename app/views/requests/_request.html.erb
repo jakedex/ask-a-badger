@@ -6,8 +6,9 @@
   </div>
   <p><%= request.body.html_safe %></p>
 </div>
-<div class="response">
+<div class="request-response">
   <% if request.response %>
+    <span class="responder-name">Asker's Response</span>
     <p class="response-text"><%= request.response %></p>
   <% else %>
     <p class="awaiting-response">Awaiting Response...</p>
