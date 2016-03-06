@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'courses/index'
+  get 'courses/index/' => 'courses#index'
+  get 'courses/' => 'courses#index'
+  get 'courses/show/:course' => 'courses#show'
+  get 'courses/:course' => 'courses#show'
+  get 'course/show/:course' => 'courses#show'
+  get 'course/:course' => 'courses#show'
 
-  get 'courses/show'
-
-  get 'requests/create'
 
   # get 'answers/create'
 

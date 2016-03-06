@@ -1,0 +1,12 @@
+<div class="course" id="<%= course.id %>">
+  <div class="course-header">
+    <span class="course-last">Active </span><span class="question-date"> <%= time_ago_in_words(Question.find(course.questions.last.id).created_at) %> ago</span>
+  </div>
+  <div class="course-title">
+    <a href="/course/<%= course.title %>" class="course-link"><span class="rendered-title"><%= course.title %></span></a>
+  </div>
+  <div class="question-misc sep-btm">
+    <a href="/course/<%= course.title %>" class="course-questions"><%= view_questions(course)%></a>
+    <a href="" class="report-link">Report</a>
+  </div>
+</div>

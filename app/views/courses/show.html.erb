@@ -1,2 +1,21 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<%= render 'layouts/nav' %>
+<div class="content-wrapper">
+  <h1 class="courses-title left"><%= @course.title %></h1>
+</div>
+<div class="content-wrapper no-padding">
+  <div class="col3-lg left">
+    <h3><br></h3>
+
+    <div class="courses">
+      <%= render @course.questions %>
+    </div>
+  </div>
+  <div class="col3-md left">
+    <div class="class-list">
+      <h3>Activity</h3>
+      <ul class="render-list">
+
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.course {
+  .course-header {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 4px;
+  }
+
+  .course-title {
+    font-family: 'Montserrat', Helvetica, sans-serif;;
+    font-size: 19px;
+    font-weight: bold;
+
+    margin-bottom: 4px;
+
+    .course-link {
+      color: #444;
+      text-decoration: none;
+    }
+  }
+
+  .course-questions {
+    font-size: 13px;
+    color: #999;
+  }
+}

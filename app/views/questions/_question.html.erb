@@ -1,4 +1,4 @@
-<div class="question <%= question.id %>">
+<div class="question" id='<%= question.id %>'>
   <div class="question-header">
     <span class="question-class"><%= Course.find(question.course_id).title %></span> • <span class="question-date"> <%= time_ago_in_words(question.created_at) %></span>
   </div>

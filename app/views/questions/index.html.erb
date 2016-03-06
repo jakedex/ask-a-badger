@@ -5,14 +5,14 @@
       <h3>Classes</h3>
       <ul class="render-list">
         <% @courses.each do |course| %>
-        <li class="render-item"><%= course.title %></li>
+          <a href="/course/<%= course.title %>" class="render-item"><%= course.title %></a>
         <% end %>
       </ul>
     </div>
   </div>
   <div class="col3-lg left">
     <h3>Top questions for you</h3>
-    
+
     <div class="questions">
       <%= render @questions.reverse_order() %>
     </div>

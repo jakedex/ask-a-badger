@@ -6,13 +6,15 @@
   margin-left: 86px;
 }
 
-.ContentWrapper {
+.no-padding {
+  padding-top: 0px !important;
+}
+
+.content-wrapper {
   display: flex;
   width: 1002px;
   margin: 0 auto;
   padding-top: 80px;
-//  padding-left: 32px;
-//  padding-right: 32px;
 
   h3 {
     color: #444;
@@ -56,6 +58,7 @@
   padding: 0;
 
   .render-item {
+    display: block;
     font-size: 13px;
     color: #999;
     padding: 4px 0;
@@ -64,43 +67,6 @@
 
 .questions {
 
-  .question {
-
-
-    .question-header {
-      font-size: 13px;
-      color: #999;
-      margin-bottom: 4px;
-    }
-
-    .question-title {
-      font-family: 'Montserrat', Helvetica, sans-serif;;
-      font-size: 19px;
-      font-weight: bold;
-
-      margin-bottom: 4px;
-
-      .question-link {
-        color: #444;
-        text-decoration: none;
-      }
-    }
-
-    .question-answers {
-      font-size: 13px;
-
-      .answers-link {
-        color: #999;
-      }
-
-    }
-
-    .question-body {
-      font-family: Georgia,Times,"Times New Roman",serif;
-      font-size: 15px;
-      color: #7E7E7E;
-    }
-  }
 }
 
 .question-btn {
