@@ -6,7 +6,11 @@
 
       <% if !@question.answer_id %>
         <div class="question-misc ">
-          <a href="" class="question-btn"><i class="icon ion-ios-undo-outline"></i><span class="answer-text">Request More Information</span></a>
+          <a href="" class="question-btn show-request-btn">
+            <i class="icon ion-ios-undo-outline"></i>
+            <span class="answer-text">Request More Information</span>
+          </a>
+          <%= render 'layouts/request_form' %>
           <a href="" class="report-link">Report</a>
         </div>
       <% end %>

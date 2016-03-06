@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :answers
+  has_many :requests
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
      :omniauthable, :omniauth_providers => [:google_oauth2]

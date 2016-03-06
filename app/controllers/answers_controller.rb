@@ -16,14 +16,8 @@ class AnswersController < ApplicationController
       preuser = Preuser.find(q.preuser_id)
       handle_answer(preuser, new_ans)
     end
-
-
   end
 
   def new
-  end
-
-  def strip_newline(body_plain)
-    body_plain[-1..-1] == "\n" ? body_plain[0..-2] : body_plain
   end
 end

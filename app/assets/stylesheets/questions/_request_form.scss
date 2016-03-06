@@ -1,0 +1,43 @@
+.request_form {
+
+  .submit-options {
+
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    float: right;
+
+    .submit-msg {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 5px;
+    }
+
+    .as-text {
+      display: inline-block;
+      margin-right: 4px;
+
+      label {
+        font-weight: normal;
+      }
+    }
+
+    .as-link {
+      display: inline-block;
+      margin-right: 8px;
+
+      label {
+        font-weight: normal;
+      }
+    }
+
+    .submit-answer {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.formatted_content {
+  width: 509.281px;
+}

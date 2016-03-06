@@ -128,10 +128,12 @@
     margin-top: 1px;
   }
 
-  &:hover {
+  &:hover, &:link, &:visited, &:active {
     background: lighten( #D1C6AD, 10%);
     color: darken( #D1C6AD, 30%);
   }
+
+
 }
 
 .question-misc {

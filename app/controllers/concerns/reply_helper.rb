@@ -1,6 +1,10 @@
 module ReplyHelper
   include TwilioHelper
 
+  def strip_newline(body_plain)
+    body_plain[-1..-1] == "\n" ? body_plain[0..-2] : body_plain
+  end
+
   def handle_oddcase(user)
     # already awaiting response
     if(user.status == 2)
