@@ -6,3 +6,10 @@
   </div>
   <p><%= request.body.html_safe %></p>
 </div>
+<div class="response">
+  <% if request.response %>
+    <p class="response-text"><%= request.response %></p>
+  <% else %>
+    <p class="awaiting-response">Awaiting Response...</p>
+  <% end %>
+</div>

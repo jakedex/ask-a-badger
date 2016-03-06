@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'static_pages/faq'
 
+  # handle message received
   post 'twilio/reply' => 'twilio#reply'
   post 'twilio/send_msg' => 'twilio#send_frontend'
 

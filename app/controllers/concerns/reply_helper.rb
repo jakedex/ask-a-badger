@@ -27,6 +27,11 @@ module ReplyHelper
       return handle_oddcase(user)
     end
 
+    # handle request response
+    if(user.status == 3)
+      return handle_request_response(user, body)
+    end
+
     # handle help response
     if(body.downcase == 'helpme')
       return "This is our unimplemented help message ;-)"
@@ -68,6 +73,16 @@ module ReplyHelper
 
     send_msg(to, from, body, nil)
     preuser.status = 3
+    preuser.save
+  end
+
+  def handle_request_response(preuser, response)
+    # TODO needsss work ;) this only works when we have 1 active q/preuser
+    request = Request.find(preuser.questions.last.request_id)
+    request.response = response
+    request.save
+
+    preuser.status = 2
     preuser.save
   end
 end

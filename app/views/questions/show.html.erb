@@ -5,19 +5,20 @@
     <p><%= @question.body %></p>
 
       <% if !@question.answer_id %>
-        <div class="question-misc ">
-          <% if @question.request_id %>
+        <% if @question.request_id %>
+          <div class="requests">
             <%= render @request %>
-          <% else %>
+          </div>
+        <% else %>
+          <div class="question-misc ">
             <a href="" class="question-btn show-request-btn">
               <i class="icon ion-ios-undo-outline"></i>
               <span class="answer-text">Request More Information</span>
             </a>
             <%= render 'layouts/request_form' %>
             <a href="" class="report-link">Report</a>
-          <% end %>
-
-        </div>
+          </div>
+        <% end %>
       <% end %>
       <div class="answers">
         <% if @question.answer_id %>

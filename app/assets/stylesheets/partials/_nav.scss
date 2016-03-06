@@ -2,6 +2,7 @@
   font-family: 'Lato';
   background: #880F00;
   position: fixed;
+  z-index: 99;
   top: 0;
   left: 0;
   width: 100%;
@@ -25,10 +26,10 @@
   font-family: 'Montserrat';
   font-weight: 900;
   font-size: 20px;
-  
+
   a {
     color: white;
-    
+
     &:hover, &:visited, &:active, &:link {
       text-decoration: none;
     }
@@ -48,19 +49,19 @@
   li {
     display: flex;
     align-items: center;
-    
+
     .nav-icon {
       display: block;
       float: left;
     }
-    
+
     .nav-text {
       display: block;
       float: left;
       margin-top: 5.5px;
       margin-left: 6px;
     }
-    
+
     .google-icon {
       margin-top: 3px;
       width: 25px;
@@ -68,8 +69,8 @@
       background-size: 25px 25px;
       background-image: image-url("google-icon-test.png");
     }
-    
-    
+
+
     a {
       font-size: 14px;
       padding: 13px 14px;

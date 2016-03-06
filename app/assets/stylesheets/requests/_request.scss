@@ -1,4 +1,12 @@
+.requests {
+  display: flex;
+  flex-direction: column;
+}
+
 .request {
+  width: 100%;
+  display: block;
+
   .request-title {
     display: block;
     font-family: 'Montserrat';
@@ -24,5 +32,14 @@
       margin-left: 6px;
 
     }
+  }
+}
+
+.response {
+  padding: 10px 0;
+  width: 100%;
+  align-self: flex-end;
+
+  .awaiting-response {
   }
 }
